@@ -1,0 +1,42 @@
+{
+  "name": "campito-spa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "webpack": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "Pablo David",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "flatpickr": "^4.5.2",
+    "moment": "^2.22.2",
+    "mongoose": "^5.1.4",
+    "morgan": "^1.9.0",
+    "papaparse": "^4.6.0",
+    "react-datepicker": "^1.6.0",
+    "react-datetimepicker-syaku": "^1.0.11",
+    "vega-embed": "^3.20.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "image-webpack-loader": "^4.3.1",
+    "nodemon": "^1.17.5",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "style-loader": "^0.23.0",
+    "url-loader": "^1.1.1",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.3"
+  }
+}
