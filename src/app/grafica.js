@@ -5,9 +5,10 @@ class Grafica extends Component {
 
 componentDidMount()
 	{
-		// do the fetch here of the data and order it
-	var spec = {
-   
+        
+        
+
+	var info = {
       background: "#ffffff",
       axis: {
         labelFont: "serif",
@@ -15,6 +16,7 @@ componentDidMount()
         tickWidth: 3,
         tickColor: "blue"
       }
+ 
     };
     var spec = {
       "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
@@ -29,11 +31,10 @@ componentDidMount()
       "mark": "bar",
       "encoding": {
         "x": { "field": "a", "type": "ordinal" },
-        "y": { "field": "b", "type": "quantitative" },
-        "tooltip": { "field": "b", "type": "quantitative" }
+        "y": { "field": "b", "type": "quantitative" }
       }
     }
-    vegaEmbed('#vis', spec, { spec: spec, tooltip: { theme: 'dark' }, defaultStyle: true }).then(function (result) {
+    vegaEmbed('#vis', spec, { info: info, tooltip: { theme: 'dark' }, default: true }).then(function (result) {
       console.log(result);
     }).catch(console.error);
 	}
@@ -42,7 +43,7 @@ componentDidMount()
  
     return (
       <div>
-
+         
         </div>
     )
   }
