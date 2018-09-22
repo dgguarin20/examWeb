@@ -5,9 +5,6 @@ class Grafica extends Component {
 
 componentDidMount()
 	{
-        
-        
-
 	var info = {
       background: "#ffffff",
       axis: {
@@ -18,23 +15,26 @@ componentDidMount()
       }
  
     };
+    var valores = {
+        x: 10,
+        y: 20
+      };
+    var primerValor = JSON.stringify(valores, null,2);
+
     var spec = {
       "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-      "description": "A simple bar chart with embedded data.",
+      "description": "graph",
       "data": {
-        "values": [
-          { "a": "A", "b": 28 }, { "a": "B", "b": 55 }, { "a": "C", "b": 43 },
-          { "a": "D", "b": 91 }, { "a": "E", "b": 81 }, { "a": "F", "b": 53 },
-          { "a": "G", "b": 19 }, { "a": "H", "b": 87 }, { "a": "I", "b": 52 }
-        ]
+        "values": valores
       },
       "mark": "bar",
       "encoding": {
-        "x": { "field": "a", "type": "ordinal" },
-        "y": { "field": "b", "type": "quantitative" }
+        "x": {"field": "a", "type": "ordinal"},
+        "y": {"field": "b", "type": "quantitative"}
       }
     }
-    vegaEmbed('#vis', spec, { info: info, tooltip: { theme: 'dark' }, default: true }).then(function (result) {
+    const embed_opt = {"mode": "vega-lite"}; 
+    vegaEmbed('#vis', spec, {defaultStyle:true}, embed_opt).then(function (result) {
       console.log(result);
     }).catch(console.error);
 	}
@@ -43,8 +43,7 @@ componentDidMount()
  
     return (
       <div>
-         
-        </div>
+      </div>
     )
   }
 }
