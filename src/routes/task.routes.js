@@ -1,7 +1,26 @@
 const express = require('express');
 const router = express.Router();
 
+const mongoclient = require('mongodb').MongoClient;
+const assert = require('assert');
+
+
+router.post('/info', (req,res,next) =>{
+  
+  mongoclient.connect('mongodb://localhost/examen', function(erro, client)
+  {
+    assert.equal(null, err);
+    console.log("se conecto");
+    const db = client.db("examenWeb");
+    client.close()
+  })
+  // Use connect method to connect to the server
+}
+)
+module.exports = router;
+
 // Task Model
+/**
 const Task = require('../models/task');
 
 // GET all Tasks
@@ -36,5 +55,5 @@ router.delete('/:id', async (req, res) => {
   await Task.findByIdAndRemove(req.params.id);
   res.json({status: 'Task Deleted'});
 });
-
+*/
 module.exports = router;
